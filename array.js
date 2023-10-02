@@ -1,4 +1,5 @@
-// An array is a special variable, which can hold more than one value:
+const { arrays } = require('./global_variables');
+// An array is a special variable, which can hold more than one value
 
 // Creating an Array
 // Using an array literal is the easiest way to create a JavaScript Array.
@@ -31,7 +32,7 @@ autoMakers[2] = 'BMW';
 // Using the JavaScript Keyword new
 // The following example also creates an Array, and assigns values to it:
 // Example
-const vehicles = new Array('Saab', 'Volvo', 'BMW');
+const vehicleMakers = new Array('Saab', 'Volvo', 'BMW');
 
 // The two examples above do exactly the same.
 // There is no need to use new Array().
@@ -58,3 +59,4 @@ carMakers[0] = 'Opel';
 // Example
 carMakers.length; // The `length` property of an array returns the length of an array (the number of array elements).
 carMakers.sort(); // Sorts the array
+console.count(arrays.animals.sort());
