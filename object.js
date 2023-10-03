@@ -47,6 +47,17 @@ function explainObject() {
 
         // 3) Some attributes, which specify how the property can be read and written. A property may have the `configurable`, `enumerable`, and `writable` attributes.
 
+        function shortenProperties() {
+            const name = 'Mango';
+            const price = 100;
+
+            const favoriteFruit = {
+                name, // name: name
+                price, // price: price
+                country: 'Korea',
+            };
+        }
+
         function accessProperties() {
             // Accessing Properties
             objectVariable.fullName; // 'Bruce Wayne'
