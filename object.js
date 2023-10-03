@@ -18,7 +18,7 @@ function explainObject() {
     const objectVariable = {
         // Objects are variables too. But objects can contain many values.
         // Tshis code assigns many values ('Bruce Wayne', 33) to a variable named variable:
-        name: 'Bruce Wayne',
+        fullName: 'Bruce Wayne',
         age: 33,
         // The values are written as name:value pairs(name and value separated by a colon).
     };
@@ -49,7 +49,7 @@ function explainObject() {
 
         function accessProperties() {
             // Accessing Properties
-            objectVariable.name; // 'Bruce Wayne'
+            objectVariable.fullName; // 'Bruce Wayne'
             objectVariable['age']; // 33
         }
 
@@ -80,5 +80,48 @@ function explainObject() {
                 console.log(`person[${key}] is ${person[key]}`);
             }
         }
+
+        function haveMethods() {
+            // Objects can also have methods.
+            // Methods are actions that can be performed on objects.
+            // Methods are stored in properties as function definitions.
+
+            function assignMethodToProperty() {
+                const exampleObject = {
+                    fullName: 'Bruce Wayne',
+                    age: 'Unknown',
+                    fly: function () {
+                        // ES5 style
+                        console.log(`${this.fullName} can't fly!`);
+                    },
+                    run() {
+                        // ES6+ style
+                        console.log(`${this.fullName} can run.`);
+                    },
+                    swim: () => console.log(`${this.fullName} can swim!`),
+                };
+
+                function shouldNotUseArrowFunction() {
+                    // fly: () => false, // fly = () => false, // SyntaxError
+                    // Arrow function should not be used as methods.
+                    // fly: () => console.log(`${this.name} can't fly!`),
+                    // undefined can't fly! this means window in browser or global in node.js
+                }
+
+                return exampleObject;
+            }
+
+            return assignMethodToProperty();
+        }
+
+        return haveMethods();
     }
+
+    return explainProperties();
 }
+
+const batman = explainObject();
+
+batman.fly();
+batman.run();
+batman.swim();
