@@ -99,29 +99,22 @@ function explainObject() {
                         console.log(`${this.fullName} can run.`);
                     },
                     swim: () => console.log(`${this.fullName} can swim!`),
+                    // fly: () => false, // SyntaxError
+                    // fly = () => false, // SyntaxError
                 };
 
                 function shouldNotUseArrowFunction() {
-                    // fly: () => false, // fly = () => false, // SyntaxError
                     // Arrow function should not be used as methods.
                     // fly: () => console.log(`${this.name} can't fly!`),
                     // undefined can't fly! this means window in browser or global in node.js
+                    exampleObject.swim();
                 }
 
-                return exampleObject;
+                function showExamples() {
+                    exampleObject.fly();
+                    exampleObject.run();
+                }
             }
-
-            return assignMethodToProperty();
         }
-
-        return haveMethods();
     }
-
-    return explainProperties();
 }
-
-const batman = explainObject();
-
-batman.fly();
-batman.run();
-batman.swim();
