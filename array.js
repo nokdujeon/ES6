@@ -3,7 +3,7 @@ const { arrays } = require('./global_variables');
 // An array is a special variable, which can hold more than one value.
 // Why Use Arrays? An array can hold many values under a single name, and you can access the values by referring to an index number.
 
-function createArray() {
+function create() {
     // Using an array literal is the easiest way to create a JavaScript Array.
     const values = ['Saab', 'Volvo', 'BMW'];
     // It is a common practice to declare arrays with the const keyword.
@@ -37,21 +37,47 @@ function createArray() {
     // For simplicity, readability and execution speed, use the array literal method.
 }
 
-function accessArrayElement() {
+function accessElements() {
     // You access an array element by referring to the index number:
     // Accessing the First Array Element
     arrays.animals[0];
     // Accessing the Last Array Element
     arrays.animals[arrays.animals.length - 1];
+
+    const person = [];
+    person[0] = 'John';
+    person[1] = 'Doe';
+    person[2] = 46;
+    person.length; // Will return 3
+    person[0]; // Will return 'John'
 }
 
-function changeArrayElement() {
+function changeElements() {
     // This statement changes the value of the first element in animals:
     arrays.animals[1] = 'Pig';
 }
 
-function builtinArrayPropertiesAndMethods() {
+function builtinPropertiesAndMethods() {
     // The real strength of JavaScript arrays are the built-in array properties and methods:
     arrays.animals.length; // The `length` property of an array returns the length of an array (the number of array elements).
     arrays.animals.sort(); // Sorts the array
+}
+
+function differenceBetweenArraysAndObjects() {
+    // In JavaScript, arrays use numbered indexes.
+    // In JavaScript, objects use named indexes.
+    // Arrays are a special kind of objects, with numbered indexes.
+
+    function warning() {
+        function useNamedIndex() {
+            // If you use named indexes, JavaScript will redefine the array to 'an object'.
+            // After that, some array methods and properties will produce incorrect results.
+            const person = [];
+            person['firstName'] = 'John';
+            person['lastName'] = 'Doe';
+            person['age'] = 46;
+            person.length; // Will return 0
+            person[0]; // Will return undefined
+        }
+    }
 }
