@@ -1,4 +1,5 @@
-// String
+const { strings } = require('./global_variables');
+
 // The 'String' object is used to represent and manipulate a sequence of characters.
 
 function create() {
@@ -34,6 +35,21 @@ function create() {
             let d = new String('John');
             c === d; // false
         }
+    }
+}
+
+function access() {
+    function useCharAt() {
+        console.log(strings.fruits[0].charAt(1)); // gives value '1'
+        console.log(typeof strings.fruits[0].charAt(1)); // gives value '1'
+    }
+
+    function treatStringAsArray() {
+        // Treat the string as an array-like object, where individual characters correspond to a numerical index:
+        console.log(strings.fruits[0][1]); // gives value '1'
+        console.log(typeof strings.fruits[0][1]); // gives value '1'
+
+        // When using bracket notation for character access, attempting to delete or assign a value to these properties will not succeed. The properties involved are neither writable nor configurable.
     }
 }
 

@@ -13,4 +13,15 @@ const arrays = {
     ],
 };
 
+const strings = {
+    desc: 'This is a description for global object.',
+    company: 'Mozilla',
+    name: 'Mike',
+    greeting: '   Hello world!   ',
+    fruits: ['01. Orange', '02. Apple', '03. Kiwi', '04. Pear'],
+    sentence:
+        'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?',
+};
+
 module.exports = { arrays };
+module.exports = { strings };
