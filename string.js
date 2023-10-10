@@ -3,23 +3,42 @@ const { strings } = require('./global_variables');
 // The 'String' object is used to represent and manipulate a sequence of characters.
 
 function create() {
-    // Strings can be created as primitives, from string literals, or as objects, using the String() constructor:
-    const strPrimitiveLiteral = 'A string is primitive.';
-    const strPrimitive_1 = String(1); // Coerced into the string primitive '1'
-    const strPrimitive_true = String(true); // Coerced into the string primitive 'true'
-    const strObject = new String('A string is an object.'); // String with new returns a string wrapper object.
+    // Strings can be created as primitives, from string literals or String() function, or as objects, using the String() constructor:
 
-    function differencesBetweenPrimitivesAndObjects() {
+    function useLiteral() {
+        const strPrimitiveLiteral = 'A string is primitive.';
         console.log(typeof strPrimitiveLiteral); // "string"
+    }
+
+    function useStringFunction() {
+        const strPrimitive_1 = String(1); // Coerced into the string primitive '1'
+        const strPrimitive_true = String(true); // Coerced into the string primitive 'true'
         console.log(typeof strPrimitive_1); // "string"
         console.log(typeof strPrimitive_true); // "string"
-        console.log(typeof strObject); // "object"
+    }
 
+    function usedStringConstructor() {
+        const strObject = new String('A string is an object.'); // String with new returns a string wrapper object.
+        console.log(typeof strObject); // "object"
+    }
+
+    function differencesBetweenPrimitivesAndObjects() {
         // String primitives and String objects also give different results when using eval(). Primitives passed to eval are treated as source code; String objects are treated as all other objects are, by returning the object. For example:
         const s1 = '2 + 2'; // creates a string primitive
-        const s2 = new String('2 + 2'); // creates a String object
+        const s2 = String('2 + 2'); // create a string primitive
+        const s3 = new String('2 + 2'); // creates a String object
+
         console.log(eval(s1)); // returns the number 4
-        console.log(eval(s2)); // returns the string "2 + 2"
+        console.log(eval(s1) === 4); // true
+        console.log(typeof s1); // returns string
+
+        console.log(eval(s2)); // returns the number 4
+        console.log(eval(s2) === 4); // true
+        console.log(typeof s2); // returns string
+
+        console.log(eval(s3)); // returns the string "2 + 2"
+        console.log(eval(s3) === 4); // false
+        console.log(typeof s3); // returns object
     }
 
     function doNotCreateStringsObjects() {
@@ -72,3 +91,5 @@ function coercion() {
     console.log(result); // Hi1truenullundefined
     console.log(typeof result); // string
 }
+
+create();
