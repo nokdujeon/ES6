@@ -1,4 +1,4 @@
-const arrays = {
+const global_arrays = {
     numbers: [1, 90, 78, 3, 22, 187, 11, 21],
     fruits: ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'],
     animals: ['Eagle', 'Bison', 'Camel', 'Duck', 'Bison', 'Cat', 'Dog'],
@@ -13,7 +13,7 @@ const arrays = {
     ],
 };
 
-const strings = {
+const global_strings = {
     desc: 'This is a description for global object.',
     company: 'Mozilla',
     name: 'Mike',
@@ -23,5 +23,5 @@ const strings = {
         'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?',
 };
 
-module.exports = { arrays };
-module.exports = { strings };
+module.exports = { global_arrays };
+module.exports = { global_strings };

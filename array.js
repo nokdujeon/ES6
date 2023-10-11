@@ -1,4 +1,4 @@
-const { arrays } = require('./global_variables');
+const { global_arrays } = require('./global_variables');
 
 // An array is a special variable, which can hold more than one value.
 // Why Use Arrays? An array can hold many values under a single name, and you can access the values by referring to an index number.
@@ -40,9 +40,9 @@ function create() {
 function accessElements() {
     // You access an array element by referring to the index number:
     // Accessing the First Array Element
-    arrays.animals[0];
+    global_arrays.animals[0];
     // Accessing the Last Array Element
-    arrays.animals[arrays.animals.length - 1];
+    global_arrays.animals[global_arrays.animals.length - 1];
 
     const person = [];
     person[0] = 'John';
@@ -54,13 +54,13 @@ function accessElements() {
 
 function changeElements() {
     // This statement changes the value of the first element in animals:
-    arrays.animals[1] = 'Pig';
+    global_arrays.animals[1] = 'Pig';
 }
 
 function builtinPropertiesAndMethods() {
     // The real strength of JavaScript arrays are the built-in array properties and methods:
-    arrays.animals.length; // The `length` property of an array returns the length of an array (the number of array elements).
-    arrays.animals.sort(); // Sorts the array
+    global_arrays.animals.length; // The `length` property of an array returns the length of an array (the number of array elements).
+    global_arrays.animals.sort(); // Sorts the array
 }
 
 function differenceBetweenArraysAndObjects() {

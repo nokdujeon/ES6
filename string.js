@@ -1,4 +1,4 @@
-const { strings } = require('./global_variables');
+const { global_strings } = require('./global_variables');
 
 // The 'String' object is used to represent and manipulate a sequence of characters.
 
@@ -46,12 +46,12 @@ function create() {
         // String objects can produce unexpected results:
 
         function stringObjectCannotBeCompared() {
-            let a = new String('John');
-            let b = new String('John');
+            const a = new String('John');
+            const b = new String('John');
             a == b; // false
 
-            let c = new String('John');
-            let d = new String('John');
+            const c = new String('John');
+            const d = new String('John');
             c === d; // false
         }
     }
@@ -59,14 +59,14 @@ function create() {
 
 function access() {
     function useCharAt() {
-        console.log(strings.fruits[0].charAt(1)); // gives value '1'
-        console.log(typeof strings.fruits[0].charAt(1)); // gives value '1'
+        console.log(global_strings.fruits[0].charAt(1)); // gives value '1'
+        console.log(typeof global_strings.fruits[0].charAt(1)); // gives value '1'
     }
 
     function treatStringAsArray() {
         // Treat the string as an array-like object, where individual characters correspond to a numerical index:
-        console.log(strings.fruits[0][1]); // gives value '1'
-        console.log(typeof strings.fruits[0][1]); // gives value '1'
+        console.log(global_strings.fruits[0][1]); // gives value '1'
+        console.log(typeof global_strings.fruits[0][1]); // gives value '1'
 
         // When using bracket notation for character access, attempting to delete or assign a value to these properties will not succeed. The properties involved are neither writable nor configurable.
     }
@@ -91,5 +91,3 @@ function coercion() {
     console.log(result); // Hi1truenullundefined
     console.log(typeof result); // string
 }
-
-create();
