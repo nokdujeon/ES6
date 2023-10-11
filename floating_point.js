@@ -1,3 +1,5 @@
+const Big = require('big.js');
+
 // Fixed - Point Number Representation vs.Floating - Point Number Representation.
 
 // ---------------------------------------------------------------
@@ -63,4 +65,24 @@ function convertIntegerToBinary(integer) {
               '1'
           )
         : convert(integer).padStart(MAX_BIT_SIZE, '0');
+}
+
+function floatingPointInaccurancies() {
+    function warning() {
+        console.log(
+            '0.1 + 0.2 == 0.3 is',
+            0.1 + 0.2 == 0.3,
+            'because',
+            0.1 + 0.2,
+            '= 0.1 + 0.2'
+        );
+    }
+
+    function useLibrary() {
+        // Use big.js
+        console.log(
+            'new Big(0.1).plus(new Big(0.2)).eq(0.3) is',
+            new Big(0.1).plus(new Big(0.2)).eq(0.3)
+        );
+    }
 }
